@@ -1,0 +1,25 @@
+# ===== Node / React =====
+node_modules/
+dist/
+build/
+.vite/
+
+# ===== Java / Spring Boot =====
+target/
+*.log
+
+# ===== Docker =====
+*.tar
+
+# ===== Environment files =====
+.env
+.env.*
+
+# ===== IDE / Editor =====
+.idea/
+.vscode/
+*.iml
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
