@@ -1,0 +1,457 @@
+  body {
+     margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    
+    
+  }
+ .login-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("./assets/login.jpg");
+  background-size: cover;        /* fills screen perfectly */
+  background-position: center;   /* keeps image centered */
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;       /* horizontal center */
+  align-items: center; 
+  overflow: hidden;          /* vertical center */
+}
+.login-box {
+  width: 420px;              /* ⬅ increase size */
+  padding: 40px;             /* more breathing space */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.login-box h2,
+.login-box .subtitle {
+  text-align: center;
+}
+
+.login-box h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  
+}
+
+.login-box input {
+  height: 45px;
+  font-size: 15px;
+}
+
+.login-box button {
+  height: 45px;
+  font-size: 16px;
+}
+
+/* Input with icon */
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  padding: 0 12px;
+  background: #fff;
+}
+
+.input-group span {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  height: 45px;
+  font-size: 15px;
+}
+
+/* Button animation */
+.login-box button {
+  width: 100%;
+  background: #2ecc71;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+}
+
+/* Role hint */
+.role-hint {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+
+
+  .subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+  .error {
+    color: red;
+  }
+  .submitted { color: orange; }
+  .approved { color: green; }
+  .rejected { color: red; }
+  .reimbursed { color: blue; }
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+
+  /* Dashboard container */
+  .card {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  /* Headings */
+  h3 {
+    margin-top: 20px;
+  }
+
+  /* Form layout */
+  form input,
+  form button {
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+
+  /* Status colors (already working, kept for clarity) */
+  .submitted { color: orange; font-weight: bold; }
+  .approved { color: green; font-weight: bold; }
+  .rejected { color: red; font-weight: bold; }
+  .reimbursed { color: blue; font-weight: bold; }
+
+
+
+  /* ===============================
+    ROLE BACKGROUNDS
+    =============================== */
+
+  .employee-bg {
+    background: #eef4ff;
+    min-height: 100vh;
+  }
+
+  .employee-header {
+    background: #2563eb;
+  }
+
+  .employee-header button {
+    background: white;
+    color: #2563eb;
+  }
+
+  .manager-bg {
+    background: #fef3c7;
+    min-height: 100vh;
+  }
+
+  .manager-header {
+    background: #f59e0b;
+  }
+
+  .manager-header button {
+    background: white;
+    color: #92400e;
+  }
+
+  .finance-bg {
+    background: #ecfeff;
+    min-height: 100vh;
+  }
+
+  .finance-header {
+    background: #0891b2;
+  }
+
+  .finance-header button {
+    background: white;
+    color: #065f73;
+  }
+
+
+
+    /* ===============================
+    EMPLOYEE DASHBOARD
+    =============================== */
+
+
+    /* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.role-text {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* FORM */
+.expense-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.expense-form input[type="file"] {
+  grid-column: span 2;
+}
+
+.primary-btn {
+  grid-column: span 2;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #1e4fd8;
+}
+
+/* TABLE */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expense-table th {
+  background: #f1f5f9;
+}
+
+.expense-table tr:hover {
+  background: #f9fafb;
+}
+
+.empty-row {
+  text-align: center;
+  color: #777;
+}
+
+/* STATUS BADGES */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.submitted { background: #fff7ed; color: #f97316; }
+.status.approved { background: #ecfdf5; color: #16a34a; }
+.status.rejected { background: #fef2f2; color: #dc2626; }
+.status.reimbursed { background: #eff6ff; color: #2563eb; }
+
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+.signup-btn {
+  background: #3b82f6;
+}
+
+.signup-btn:hover {
+  background: #2563eb;
+}
+
+
+/* ===============================
+   HEADER – ROLE ICON + TOOLTIP
+   =============================== */
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+/* Role icon */
+.role-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.role-avatar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Tooltip */
+.profile-tooltip {
+  position: absolute;
+  top: 54px;
+  right: 62px;
+  background: white;
+  color: #1f2937;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  text-align: left;
+  min-width: 140px;
+  z-index: 100;
+}
+
+.profile-wrapper:hover .profile-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(6px);
+}
+
+.tooltip-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tooltip-role {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* ===============================
+   CREATIVE LOGOUT BUTTON
+   =============================== */
+
+.logout-pill {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.logout-pill:hover {
+  background: white;
+  color: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+
+/* Choice Page */
+.choice-page {
+  padding: 40px;
+  text-align: center;
+}
+
+.choice-title {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.choice-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.choice-card {
+  width: 280px;
+  padding: 25px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.choice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+.own-money {
+  background: #e8f5e9;
+}
+
+.need-fund {
+  background: #e3f2fd;
+}
+
+.choice-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.choice-card p {
+  color: #555;
+}
+
+
+
+/* Fund Request Textareas */
+.fund-textarea {
+  grid-column: span 2;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: none;
+}
+
+.fund-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}

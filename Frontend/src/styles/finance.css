@@ -1,0 +1,132 @@
+/* PAGE */
+.finance-bg {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e0f2fe, #f0fdfa);
+  padding-bottom: 50px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* MAIN CARD */
+.finance-card {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* TITLE */
+.finance-title {
+  margin-bottom: 24px;
+  font-size: 22px;
+  color: #0f172a;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* TABLE WRAPPER */
+.finance-table-wrapper {
+  overflow-x: auto;
+}
+
+/* TABLE */
+.finance-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEADER */
+.finance-table thead th {
+  background: #f1f5f9;
+  padding: 14px;
+  font-size: 14px;
+  color: #334155;
+  text-align: center;
+}
+
+/* ROWS */
+.finance-table tbody tr {
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.finance-table tbody tr:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+/* CELLS */
+.finance-table td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.employee-cell {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.amount-cell {
+  font-weight: 600;
+  color: #0f766e;
+}
+
+/* STATUS BADGE */
+.status {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.approved {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+/* ACTION CELL */
+.action-cell {
+  display: flex;
+  justify-content: center;
+}
+
+/* BUTTON */
+.reimburse-btn {
+  background: #0d9488;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.reimburse-btn:hover {
+  background: #0f766e;
+  transform: translateY(-1px);
+}
+
+.reimburse-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+.manager-comment-cell {
+  max-width: 240px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+  white-space: normal;
+}
