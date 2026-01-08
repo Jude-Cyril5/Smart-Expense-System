@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/manager")
-@CrossOrigin(origins = "http://localhost:3000")
 public class ManagerController {
 
     private final ExpenseRepository expenseRepository;
@@ -24,7 +23,6 @@ public class ManagerController {
         this.managerService = managerService;
     }
 
-    // 🔹 View all submitted expenses
     @GetMapping("/expenses")
     public ResponseEntity<List<Expense>> getSubmittedExpenses() {
         return ResponseEntity.ok(
@@ -32,7 +30,6 @@ public class ManagerController {
         );
     }
 
-    // 🔹 Approve / Reject expense
     @PostMapping("/process")
     public ResponseEntity<Expense> processExpense(
             @RequestBody ManagerActionRequest request

@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import "../styles/manager.css";
+import { API_BASE_URL } from "../config";
 
 export default function ManagerDashboard() {
   const [expenses, setExpenses] = useState([]);
   const [comments, setComments] = useState({});
 
   const loadExpenses = async () => {
-    const res = await fetch("http://localhost:8080/api/manager/expenses");
+    const res = await fetch(`${API_BASE_URL}/api/manager/expenses`);
+    if (!res.ok) {
+      console.error("Failed to load manager expenses");
+      return;
+    }
     setExpenses(await res.json());
   };
 
@@ -15,7 +20,7 @@ export default function ManagerDashboard() {
   }, []);
 
   const process = async (id, action) => {
-    await fetch("http://localhost:8080/api/manager/process", {
+    await fetch(`${API_BASE_URL}/api/manager/process`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -41,7 +46,6 @@ export default function ManagerDashboard() {
         {expenses.map((e) => (
           <div key={e.id} className="approval-card">
 
-            {/* CENTER: TITLE + AMOUNT */}
             <div className="expense-center">
               <h4 className="expense-title">{e.title}</h4>
 
@@ -53,7 +57,6 @@ export default function ManagerDashboard() {
               </div>
             </div>
 
-            {/* RIGHT: ACTIONS */}
             <div className="action-panel">
               <input
                 placeholder="Add comment (optional)"
