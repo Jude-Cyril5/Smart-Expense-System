@@ -3,7 +3,7 @@ import "../styles/employee.css";
 import { getEmployeeFundRequests } from "../services/api";
 import { API_BASE_URL } from "../config";
 
-export default function EmployeeDashboard({ user }) {
+export default function EmployeeDashboard({ user, onBack }) {
   const [expenses, setExpenses] = useState([]);
   const [fundRequests, setFundRequests] = useState([]);
 
@@ -55,9 +55,7 @@ export default function EmployeeDashboard({ user }) {
         body: formData,
       });
 
-      if (!res.ok) {
-        throw new Error("Expense submit failed");
-      }
+      if (!res.ok) throw new Error();
 
       alert("Expense submitted successfully");
       setTitle("");
@@ -65,8 +63,7 @@ export default function EmployeeDashboard({ user }) {
       setAmount("");
       setFile(null);
       loadExpenses();
-    } catch (err) {
-      console.error(err);
+    } catch {
       alert("Submit failed");
     } finally {
       setSubmitting(false);
@@ -80,6 +77,11 @@ export default function EmployeeDashboard({ user }) {
 
   return (
     <div className="employee-bg">
+
+      {/* ✅ BACK BUTTON */}
+      <button className="back-btn" onClick={onBack}>
+        ← Back to Expense Type
+      </button>
 
       {/* STATS */}
       <div className="stats-row">
@@ -106,7 +108,6 @@ export default function EmployeeDashboard({ user }) {
 
       {/* MAIN CARD */}
       <div className="card">
-
         <h3>🧾 Submit Expense</h3>
 
         <form className="expense-form" onSubmit={submitExpense}>
@@ -175,7 +176,6 @@ export default function EmployeeDashboard({ user }) {
             ))}
           </tbody>
         </table>
-
       </div>
     </div>
   );

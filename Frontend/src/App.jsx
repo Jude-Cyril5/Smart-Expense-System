@@ -29,13 +29,16 @@ export default function App() {
     <div>
       <Header user={user} role={user.role} onLogout={logout} />
 
-      {/* EMPLOYEE */}
+      {/* EMPLOYEE FLOW */}
       {user.role === "EMPLOYEE" && !flow && (
         <FundingChoicePage onSelect={setFlow} />
       )}
 
       {user.role === "EMPLOYEE" && flow === "EMPLOYEE" && (
-        <EmployeeDashboard user={user} />
+        <EmployeeDashboard
+          user={user}
+          onBack={() => setFlow(null)}   // ✅ BACK HANDLER
+        />
       )}
 
       {user.role === "EMPLOYEE" && flow === "FUND_FORM" && (
@@ -46,14 +49,10 @@ export default function App() {
       )}
 
       {/* MANAGER */}
-      {user.role === "MANAGER" && (
-        <ManagerDashboard />
-      )}
+      {user.role === "MANAGER" && <ManagerDashboard />}
 
       {/* FINANCE */}
-      {user.role === "FINANCE" && (
-        <FinanceFundingDashboard />
-      )}
+      {user.role === "FINANCE" && <FinanceFundingDashboard />}
     </div>
   );
 }

@@ -155,3 +155,17 @@
 .expense-table-container::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 10px 0 15px 10px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
